@@ -7,14 +7,14 @@
 :root {
   --color-principal: #1e293b;
   --color-secundario: #e93a0e;
-  --color-fondo: #fcf8f8; 
+  --color-fondo: #FAF9F6;
   --color-card: #ffffff;
   --color-texto: #334155;
   --color-error: #ef4444;
 }
 
 body {
-  
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
@@ -30,7 +30,7 @@ header {
 }
 
 .navigator ul {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
@@ -47,14 +47,10 @@ header {
   border-bottom: 3px solid transparent;
 }
 
-.navigator a:hover{
+.navigator a:hover {
   background-color: var(--color-secundario);
 }
 
-.navigator .activo{
+.navigator .activo {
   background-color: #334155;
 }
-
-
-  
-

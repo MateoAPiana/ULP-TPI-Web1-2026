@@ -13,9 +13,17 @@ const books = [
   "book10.png",
 ]
 
-for (let b of books) {
-  const item = document.createElement("div")
-  item.className = "item"
-  item.innerHTML = `<img src="./images/${b}" alt="${b}">`
-  container.appendChild(item)
+const types = [
+  "BetsSellers",
+  "CienciaFiccion",
+  "Fantasia"
+]
+
+for (let t of types) {
+  for (let b of books) {
+    const item = document.createElement("div")
+    item.className = "item"
+    item.innerHTML = `<img src="./images/${t}/${b}" alt="${b}">`
+    container.appendChild(item)
+  }
 }

@@ -25,6 +25,8 @@ header {
   height: 80dvh;
   background-image: url("./images/backgruond.webp");
   background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--color-fondo);
   display: flex;
   flex-direction: column;

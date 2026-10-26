@@ -1,5 +1,6 @@
 .carrusel {
-  width: fit-content;
+  width: 85%;
+  height: 60dvh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,8 +12,10 @@
 }
 
 .carrusel img {
-  height: 40dvh;
+  width: 18%;
+  height: 100%;
   object-fit: cover;
+  flex-grow: 1;
 }
 
 main {

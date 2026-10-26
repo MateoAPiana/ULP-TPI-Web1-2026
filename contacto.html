@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto</title>
   <link rel="shortcut icon" href="./images/icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contacto.css">
 </head>
 
 <body>
@@ -16,6 +18,23 @@
       <li><a href="/contacto.html">Contacto</a></li>
     </ul>
   </nav>
+  <main class = "contacto">
+    <section class="contacto-consulta">
+    <h1>Contacto</h1>
+    <p>¿Tiene alguna consulta?</p>
+    <form method="post" class="form-contacto" novalidate>
+      <label for="nombre">Nombre y Apellido</label>
+      <input type="text" name="nombre" id="nombre"required>
+      <label for="email">Correo Electronico</label>
+      <input type="email" name="email" id="email"required>
+      <label for="telefono">Telefono</label>
+      <input type="tel" name="telefono" id="telefono"required>
+      <label for="mensaje">Mensaje</label>
+      <textarea name="mensaje" id="mensaje"></textarea>
+      <input type="submit" value="enviar">
+    </form>
+    </section>
+  </main>
 </body>
 
 </html>

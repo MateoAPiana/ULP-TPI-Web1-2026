@@ -1,0 +1,19 @@
+.contacto{
+display: flex;
+flex-direction: column;
+min-width: 400px;
+gap: 15px;
+padding: 18px;
+}
+
+.form-contacto label{
+    display: block;
+    font-weight: bold;   
+}
+
+.form-contacto input,
+.form-contacto textarea {
+width: 60%;
+padding: 10px;
+box-sizing: border-box;
+}

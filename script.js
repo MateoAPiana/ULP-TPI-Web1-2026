@@ -11,17 +11,32 @@ const books = [
   "book10.png",
 ]
 
-const image1 = document.getElementById("image1")
-const image2 = document.getElementById("image2")
-const image3 = document.getElementById("image3")
+const carruseles = document.getElementsByClassName("carrusel")
 
 bookIndex = 0;
 
-function rotateImage() {
+function rotateImages() {
   bookIndex++
-  image1.setAttribute("src", `./images/${books[bookIndex % books.length]}`)
-  image2.setAttribute("src", `./images/${books[(bookIndex + 1) % books.length]}`)
-  image3.setAttribute("src", `./images/${books[(bookIndex + 2) % books.length]}`)
+
+  for (let c of carruseles) {
+    rotateImage(c, books)
+  }
 }
 
-setInterval(rotateImage, 5000)
+function rotateImage(carrusel, bookList) {
+  const image1 = carrusel.getElementsByClassName("image1")[0]
+  const image2 = carrusel.getElementsByClassName("image2")[0]
+  const image3 = carrusel.getElementsByClassName("image3")[0]
+  const image4 = carrusel.getElementsByClassName("image4")[0]
+  const image5 = carrusel.getElementsByClassName("image5")[0]
+
+  console.log(image1)
+
+  image1.setAttribute("src", `./images/${bookList[bookIndex % bookList.length]}`)
+  image2.setAttribute("src", `./images/${bookList[(bookIndex + 1) % bookList.length]}`)
+  image3.setAttribute("src", `./images/${bookList[(bookIndex + 2) % bookList.length]}`)
+  image4.setAttribute("src", `./images/${bookList[(bookIndex + 3) % bookList.length]}`)
+  image5.setAttribute("src", `./images/${bookList[(bookIndex + 4) % bookList.length]}`)
+}
+
+setInterval(rotateImages, 5000)

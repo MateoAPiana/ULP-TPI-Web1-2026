@@ -1,24 +1,24 @@
 .carrusel {
+  width: fit-content;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 32px;
-  align-self: center;
+  gap: 4px;
   padding: 12px;
-
+  margin: 8px 0;
   border: 3px solid var(--color-principal);
   border-radius: 10px;
-
 }
 
 .carrusel img {
-
-  height: 45dvh;
+  height: 40dvh;
+  object-fit: cover;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 header {

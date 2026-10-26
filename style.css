@@ -7,14 +7,13 @@
 :root {
   --color-principal: #1e293b;
   --color-secundario: #e93a0e;
-  --color-fondo: #FAF9F6;
+  --color-fondo: #F2E8D5;
   --color-card: #ffffff;
   --color-texto: #334155;
   --color-error: #ef4444;
 }
 
 body {
-
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
@@ -24,9 +23,8 @@ body {
   min-height: 100vh;
 }
 
-header {
-  background-color: var(--color-principal);
-  padding: 1rem 2rem;
+.navigator {
+  height: 10dvh;
 }
 
 .navigator ul {

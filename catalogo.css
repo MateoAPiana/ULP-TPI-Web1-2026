@@ -1,13 +1,13 @@
 #container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   gap: 10px;
   margin: 10px 10% 10px 10%;
 }
 
 main h1 {
   text-align: center;
-  margin: 18px 0;
+  font-size: 32px;
 }
 
 .item img {

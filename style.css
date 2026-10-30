@@ -24,7 +24,27 @@ body {
 }
 
 .navigator {
-  height: 10dvh;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-izquierda{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-izquierda img{
+  height:100px ;
+  width: auto ;
+  display: block;
+}
+
+.nav-derecha img{
+  height:100px;
+  width: auto;
+  display: block;
 }
 
 .navigator ul {
@@ -36,19 +56,22 @@ body {
 }
 
 .navigator a {
-  color: #7a1818;
+  color: #5c4033;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
 }
 
 .navigator a:hover {
-  background-color: var(--color-secundario);
+  background-color: #5c4033;
+  color: #F2E8D5;
 }
 
 .navigator .activo {
-  background-color: #334155;
+  background-color: #5c4033;
+  color: #F2E8D5;
+  font-weight: bold;
 }

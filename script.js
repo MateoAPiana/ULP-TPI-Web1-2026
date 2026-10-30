@@ -11,36 +11,61 @@ const books = [
   "book10.png",
 ]
 
-const types = [
-  "BetsSellers",
-  "CienciaFiccion",
-  "Fantasia"
-]
+let indexPorCarrusel = {}
 
 const carruseles = document.getElementsByClassName("carrusel")
 
-bookIndex = 0;
+let carruselesIds = []
+
+for (let i of carruseles) {
+  carruselesIds.push(i.getAttribute("id"))
+  indexPorCarrusel[i.getAttribute("id")] = 0
+  console.log(indexPorCarrusel)
+}
 
 function rotateImages() {
-  bookIndex++
 
-  for (let i in carruseles) {
-    rotateImage(carruseles[i], types[i])
+  for (let i of carruselesIds) {
+    indexPorCarrusel[i]++
+    rotateImage(i)
   }
 }
 
-function rotateImage(carrusel, t) {
-  const image1 = carrusel.getElementsByClassName("image1")[0]
-  const image2 = carrusel.getElementsByClassName("image2")[0]
-  const image3 = carrusel.getElementsByClassName("image3")[0]
-  const image4 = carrusel.getElementsByClassName("image4")[0]
-  const image5 = carrusel.getElementsByClassName("image5")[0]
+function rotateImage(carruselId) {
+  const image1 = document.querySelector("#" + carruselId + " .image1")
+  const image2 = document.querySelector("#" + carruselId + " .image2")
+  const image3 = document.querySelector("#" + carruselId + " .image3")
+  const image4 = document.querySelector("#" + carruselId + " .image4")
+  const image5 = document.querySelector("#" + carruselId + " .image5")
 
-  image1.setAttribute("src", `./images/${t}/${books[bookIndex % books.length]}`)
-  image2.setAttribute("src", `./images/${t}/${books[(bookIndex + 1) % books.length]}`)
-  image3.setAttribute("src", `./images/${t}/${books[(bookIndex + 2) % books.length]}`)
-  image4.setAttribute("src", `./images/${t}/${books[(bookIndex + 3) % books.length]}`)
-  image5.setAttribute("src", `./images/${t}/${books[(bookIndex + 4) % books.length]}`)
+
+  image1.setAttribute("src", `./images/${carruselId}/${books[indexPorCarrusel[carruselId] % books.length]}`)
+  image2.setAttribute("src", `./images/${carruselId}/${books[(indexPorCarrusel[carruselId] + 1) % books.length]}`)
+  image3.setAttribute("src", `./images/${carruselId}/${books[(indexPorCarrusel[carruselId] + 2) % books.length]}`)
+  image4.setAttribute("src", `./images/${carruselId}/${books[(indexPorCarrusel[carruselId] + 3) % books.length]}`)
+  image5.setAttribute("src", `./images/${carruselId}/${books[(indexPorCarrusel[carruselId] + 4) % books.length]}`)
 }
 
-setInterval(rotateImages, 5000)
+let temporizador = setInterval(rotateImages, 3000)
+
+// Agregando los eventos a las flechas
+
+for (let i of carruselesIds) {
+  const flechaD = document.querySelector("#" + i + " .flechaD")
+  const flechaI = document.querySelector("#" + i + " .flechaI")
+
+  flechaD.addEventListener("click", () => {
+    indexPorCarrusel[i]++
+    rotateImage(i)
+    clearInterval(temporizador)
+    temporizador = setInterval(rotateImages, 3000)
+  })
+
+  flechaI.addEventListener("click", () => {
+    indexPorCarrusel[i]--
+    if (indexPorCarrusel[i] <= 0) indexPorCarrusel[i] += books.length
+    rotateImage(i)
+    clearInterval(temporizador)
+    temporizador = setInterval(rotateImages, 3000)
+  })
+}

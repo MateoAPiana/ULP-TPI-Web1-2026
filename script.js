@@ -20,7 +20,6 @@ let carruselesIds = []
 for (let i of carruseles) {
   carruselesIds.push(i.getAttribute("id"))
   indexPorCarrusel[i.getAttribute("id")] = 0
-  console.log(indexPorCarrusel)
 }
 
 function rotateImages() {

@@ -44,6 +44,12 @@ function rotateImage(carruselId) {
   image3.setAttribute("src", `./images/${carruselId}/${books[(indexPorCarrusel[carruselId] + 2) % books.length]}`)
   image4.setAttribute("src", `./images/${carruselId}/${books[(indexPorCarrusel[carruselId] + 3) % books.length]}`)
   image5.setAttribute("src", `./images/${carruselId}/${books[(indexPorCarrusel[carruselId] + 4) % books.length]}`)
+
+  image1.setAttribute("alt", `${books[indexPorCarrusel[carruselId] % books.length].split(".")[0]} de ${carruselId}/`)
+  image2.setAttribute("alt", `${books[(indexPorCarrusel[carruselId] + 1) % books.length].split(".")[0]} de ${carruselId}/`)
+  image3.setAttribute("alt", `${books[(indexPorCarrusel[carruselId] + 2) % books.length].split(".")[0]} de ${carruselId}/`)
+  image4.setAttribute("alt", `${books[(indexPorCarrusel[carruselId] + 3) % books.length].split(".")[0]} de ${carruselId}/`)
+  image5.setAttribute("alt", `${books[(indexPorCarrusel[carruselId] + 4) % books.length].split(".")[0]} de ${carruselId}/`)
 }
 
 let temporizador = setInterval(rotateImages, 3000)

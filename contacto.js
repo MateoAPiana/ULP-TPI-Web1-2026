@@ -9,10 +9,14 @@ const pat_mensaje = /^(\w|\s){16,}$/
 function enviarFormulario(event) {
   event.preventDefault()
 
-  const nombre = formulario["nombre"].value
-  const email = formulario["email"].value
-  const telefono = formulario["telefono"].value
-  const mensaje = formulario["mensaje"].value
+  // Recuperación de información
+
+  const nombre = formulario["nombre"].value.trim()
+  const email = formulario["email"].value.trim()
+  const telefono = formulario["telefono"].value.trim()
+  const mensaje = formulario["mensaje"].value.trim()
+
+  // Validaciones
 
   const errorNombre = document.getElementById("errorNombre")
   if (!pat_nombre.test(nombre)) {
@@ -38,6 +42,8 @@ function enviarFormulario(event) {
     return
   } else errorMensaje.innerHTML = ""
 
+  // Creación de elementos
+
   const resContenedor = document.createElement("div")
   const resNombre = document.createElement("h3")
   resNombre.innerText = nombre
@@ -50,6 +56,11 @@ function enviarFormulario(event) {
   resContenedor.appendChild(resContacto)
   resContenedor.appendChild(resContenido)
   contenedorMensajesAnteriores.appendChild(resContenedor)
+
+  formulario["nombre"].value = ""
+  formulario["email"].value = ""
+  formulario["telefono"].value = ""
+  formulario["mensaje"].value = ""
 }
 
 formulario.addEventListener("submit", enviarFormulario)

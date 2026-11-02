@@ -11,36 +11,45 @@
 </head>
 
 <body>
-      <nav class="navigator">
-    <div class = "nav-izquierda">
+  <nav class="navigator">
+    <div class="nav-izquierda">
       <img src="./images/logo.jpg" alt="logo libreria">
       <ul>
-      <li><a href ="/index.html">Home</a></li>
-      <li><a href="/catalogo.html">Catálogo</a></li>
-      <li><a href="/contacto.html" class ="activo">Contacto</a></li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/catalogo.html">Catálogo</a></li>
+        <li><a href="/contacto.html" class="activo">Contacto</a></li>
       </ul>
     </div>
-    <div class = "nav-derecha">
+    <div class="nav-derecha">
       <img src="./images/ulplogo.png" alt="ulp logo">
     </div>
   </nav>
-  <main class = "contacto">
+  <main class="contacto">
     <section class="contacto-consulta">
-    <h1>Contacto</h1>
-    <p>¿Tiene alguna consulta?</p>
-    <form method="post" class="form-contacto" novalidate>
-      <label for="nombre">Nombre y Apellido</label>
-      <input type="text" name="nombre" id="nombre"required>
-      <label for="email">Correo Electronico</label>
-      <input type="email" name="email" id="email"required>
-      <label for="telefono">Telefono</label>
-      <input type="tel" name="telefono" id="telefono"required>
-      <label for="mensaje">Mensaje</label>
-      <textarea name="mensaje" id="mensaje"></textarea>
-      <input type="submit" value="enviar">
-    </form>
+      <h1>Contacto</h1>
+      <p>¿Tiene alguna consulta?</p>
+      <form method="post" class="form-contacto" novalidate>
+        <label for="nombre">Nombre y Apellido</label>
+        <span class="error" id="errorNombre"></span>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="email">Correo Electronico</label>
+        <span class="error" id="errorEmail"></span>
+        <input type="email" name="email" id="email" required>
+
+        <label for="telefono">Telefono</label>
+        <span class="error" id="errorTelefono"></span>
+        <input type="tel" name="telefono" id="telefono" required>
+
+        <label for="mensaje">Mensaje</label>
+        <span class="error" id="errorMensaje"></span>
+        <textarea name="mensaje" id="mensaje"></textarea>
+        <input type="submit" value="enviar">
+      </form>
     </section>
+    <div id="mensajesAnteriores"> </div>
   </main>
+  <script src="./contacto.js"></script>
 </body>
 
 </html>

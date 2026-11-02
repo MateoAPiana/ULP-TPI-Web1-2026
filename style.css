@@ -24,25 +24,25 @@ body {
 }
 
 .navigator {
-display: flex;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-izquierda{
+.nav-izquierda {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-.nav-izquierda img{
-  height:100px ;
-  width: auto ;
+.nav-izquierda img {
+  height: 100px;
+  width: auto;
   display: block;
 }
 
-.nav-derecha img{
-  height:100px;
+.nav-derecha img {
+  height: 100px;
   width: auto;
   display: block;
 }

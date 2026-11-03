@@ -18,29 +18,33 @@ function enviarFormulario(event) {
 
   // Validaciones
 
+  let tieneErrores = false
+
   const errorNombre = document.getElementById("errorNombre")
   if (!pat_nombre.test(nombre)) {
     errorNombre.innerHTML = "Ingrese su nombre y su apellido separados por un espacio </br>"
-    return
+    tieneErrores = true
   } else errorNombre.innerHTML = ""
 
   const errorEmail = document.getElementById("errorEmail")
   if (!pat_email.test(email)) {
     errorEmail.innerHTML = "Su email debe tener este formato 'usuario@gmail.com' </br>"
-    return
+    tieneErrores = true
   } else errorEmail.innerHTML = ""
 
   const errorTelefono = document.getElementById("errorTelefono")
   if (!pat_telefono.test(telefono)) {
     errorTelefono.innerHTML = "Ingrese un teléfono válido (debe tener 10 dígitos) </br>"
-    return
+    tieneErrores = true
   } else errorTelefono.innerHTML = ""
 
   const errorMensaje = document.getElementById("errorMensaje")
   if (!pat_mensaje.test(mensaje)) {
     errorMensaje.innerHTML = "Su mensaje tiene que tener un mínimo de 16 caracteres </br>"
-    return
+    tieneErrores = true
   } else errorMensaje.innerHTML = ""
+
+  if (tieneErrores) return
 
   // Creación de elementos
 
